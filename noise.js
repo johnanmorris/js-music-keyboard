@@ -1,8 +1,5 @@
-var audioFile = function(note) {
-  return "#" + note + "Audio";
-};
-
-var playFile = function(filename) {
+var playFile = function(note) {
+  var filename = "#" + note + "Audio";
   $(filename).load();
   $(filename).get(0).play();
 };
@@ -15,16 +12,14 @@ $(document).ready( function() {
       //set to lower case to get capitals; these
       //are the same keycode but different key.
       var note = event.key.toLowerCase();
-      var audio = audioFile(note);
-      playFile(audio);
+      playFile(note);
     }
     // console.log(event.key + ":" + event.which);
   });
 
   $('.note').click(function() {
     var selection = $(this).html();
-    var audio = audioFile(selection);
-    playFile(audio);
+    playFile(selection);
 //    console.log(selection);
   });
 });
