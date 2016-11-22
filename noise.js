@@ -12,6 +12,8 @@ $(document).ready( function() {
   $('body').keydown(function(event) {
     // keycodes 65 - 71 are a-g
     if (event.which > 64 && event.which < 72) {
+      //set to lower case to get capitals; these
+      //are the same keycode but different key.
       var note = event.key.toLowerCase();
       var audio = audioFile(note);
       playFile(audio);
@@ -23,6 +25,6 @@ $(document).ready( function() {
     var selection = $(this).html();
     var audio = audioFile(selection);
     playFile(audio);
-    console.log(selection);
+//    console.log(selection);
   });
 });
