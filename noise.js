@@ -10,11 +10,13 @@ var playFile = function(filename) {
 $(document).ready( function() {
 
   $('body').keydown(function(event) {
+    // keycodes 65 - 71 are a-g
     if (event.which > 64 && event.which < 72) {
-    var audio = audioFile(event.key);
-    playFile(audio);
-    console.log(event.key);
+      var note = event.key.toLowerCase();
+      var audio = audioFile(note);
+      playFile(audio);
     }
+    // console.log(event.key + ":" + event.which);
   });
 
   $('.note').click(function() {
